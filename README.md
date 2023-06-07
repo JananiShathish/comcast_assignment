@@ -1,9 +1,35 @@
 # comcast_assignment
-Assignment of network device interaction through python program
+Micro service app to fetch crypto currency market updates from below site.
+https://bittrex.github.io/api/v3
+https://bittrex.github.io/api/v3#tag-Markets
 
-1. Setting up a network device for the program to interact with.
-We prefer an emulated device however a physical device will be ok as well.
-You will need to interact with this device via Netconf and cli.
+Functional Tasks
 
-2. Write a program in python that listens for REST calls and interacts with a network device
-User -----HTTP/REST----> [Your Automation Program] ---Netconf/Cli-----> Device
+1. API implementation and param validation using standard libraries.
+2. One API to return all market summary, backend can refer to the below with authentication
+  a. https://api.bittrex.com/v3/markets/summaries
+3. One API which accepts market as query param and depends on the below backend API with authentication.
+  a. https://api.bittrex.com/v3/markets/<marketSymbol>/summary
+  b. e.g. (for ltc-btc) - https://api.bittrex.com/v3/markets/ltc-btc/summary
+4. Quality unit tests using pytest
+  a. Coverage should be above 80%
+5. Code should be committed to Git and shared for us to be able to monitor commit messages and evolution of code from scratch.
+  a. Helps us evaluate development approach from the candidate
+  
+  
+Non Functional Tasks
+  
+1. Authentication for backend rest calls
+2. Professional API documentation. (ex: swagger)
+3. Linting and quality control integrated in the in the project folder.
+4. Good project structuring
+5. Secured way of storing auth credentials
+6. No Hardcoding
+7. Efficient code (less loops, conditional statements)
+8. Read.md with project documentation
+  
+Bonus tasks
+1. Docker build files
+2. Back-end Health check and version info APIs.
+3. Protect the APIs developed using standard authentications and authorisation 
+techniques
