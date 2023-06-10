@@ -2,9 +2,12 @@
 1: to get the summary details of all the market
 2: to get the summary details of one particular market'''
 
-from flask import Flask, request, jsonify
+import os
 import requests
-from config import USERNAME, PASSWORD
+from flask import Flask, request, jsonify
+# from config import USERNAME, PASSWORD
+USERNAME = os.environ.get('USERNAME')
+PASSWORD = os.environ.get('PASSWORD')
 
 
 app = Flask(__name__)
