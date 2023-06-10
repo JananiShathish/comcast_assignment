@@ -1,2 +1,4 @@
-Username = 'Janani'
-Password = 'Rakshan'    
+'''Login credentials here'''
+
+USERNAME = 'Janani'
+PASSWORD = 'Rakshan@01'
