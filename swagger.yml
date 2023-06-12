@@ -1,0 +1,46 @@
+openapi: '3.0.2'
+info:
+  title: API Title
+  version: '1.0'
+servers:
+  - url: "/api"
+paths:
+  /fetch_updates:
+    get:
+      operationId: "markets.fetch_updates"
+      summary: " To get all the Market Summary"
+      
+      tags:
+        - Array
+      security:
+        - basic: []  
+      responses:
+        '200':
+          description: OK
+
+  /fetch_updates/summary:
+    get:
+      operationId: "markets.summary_updates"
+      summary: " To get all the specific market Summary"
+      
+      tags:
+        - Array
+      security:
+        - basic: []  
+      parameters:
+        - name: marketname
+          schema:
+            type: string
+          in: query
+          required: true
+          description: "Specific market name"
+      responses:
+        '200':
+          description: OK          
+
+components:
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic 
+      x-basicInfoFunc: markets.basic_auth      
