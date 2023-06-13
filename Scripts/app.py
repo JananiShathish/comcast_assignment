@@ -5,7 +5,7 @@
 
 import connexion
 
-app = connexion.App(__name__, specification_dir="../")
+app = connexion.App(__name__, specification_dir="../") # For swagger UI API Documentation
 app.add_api('swagger.yml')  
 
 if __name__ == '__main__':

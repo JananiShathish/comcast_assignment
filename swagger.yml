@@ -1,6 +1,6 @@
 openapi: '3.0.2'
 info:
-  title: API Title
+  title: API with 2 endpoints to fetch all the crypto currency market updates
   version: '1.0'
 servers:
   - url: "/api"
@@ -8,7 +8,7 @@ paths:
   /fetch_updates:
     get:
       operationId: "markets.fetch_updates"
-      summary: " To get all the Market Summary"
+      summary: " To get all the Market updates Summary"
       
       tags:
         - Array
@@ -16,12 +16,12 @@ paths:
         - basic: []  
       responses:
         '200':
-          description: OK
+          description: Successful
 
   /fetch_updates/summary:
     get:
       operationId: "markets.summary_updates"
-      summary: " To get all the specific market Summary"
+      summary: " To get the specific market's update Summary"
       
       tags:
         - Array
@@ -33,10 +33,10 @@ paths:
             type: string
           in: query
           required: true
-          description: "Specific market name"
+          description: "Provide specific market name"
       responses:
         '200':
-          description: OK          
+          description: successful         
 
 components:
   securitySchemes:

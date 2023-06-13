@@ -1,16 +1,12 @@
 ''' this module has got 2 API endpoints implementations
 1: to get the summary details of all the market
 2: to get the summary details of one particular market'''
-
-import os
 import requests
-
-from flask import  request, jsonify, render_template
+from config import PASSWD
+from flask import  request, jsonify
 from werkzeug.exceptions import Unauthorized
 
-PASSWD = {"janani": "shathish", "sashvith": "rakshan"}
-
-def basic_auth(username, password):
+def basic_auth(username, password): # to perform authentication against the existing users
     if PASSWD.get(username) == password:
         return {"sub": username}
     else: 
@@ -46,5 +42,6 @@ def summary_updates(marketname):
 
     except request.exceptions.RequestException as error:
         return 'Error fetching updates: ' + str(error), 500
+
 
 
